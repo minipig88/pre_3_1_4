@@ -29,7 +29,7 @@ public class AdminRestController {
     }
 
     @PostMapping("/createUser")
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
+    public ResponseEntity<UserDto> addUser(@RequestBody UserDto user) {
         userService.saveUser(user);
         return ResponseEntity.ok(userService.findUserByName(user.getEmail()));
     }

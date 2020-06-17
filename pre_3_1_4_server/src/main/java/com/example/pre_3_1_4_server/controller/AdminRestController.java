@@ -34,7 +34,7 @@ public class AdminRestController {
     }
 
     @PostMapping("/createUser")
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
+    public ResponseEntity<UserDto> addUser(@RequestBody UserDto user) {
         userService.saveUser(user);
         return ResponseEntity.ok(userService.findUserByName(user.getEmail()));
     }
@@ -50,5 +50,4 @@ public class AdminRestController {
         userService.deleteUserById(id);
         return ResponseEntity.ok("success");
     }
-
 }
